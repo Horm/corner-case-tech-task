@@ -7,7 +7,7 @@ import BottomBar from "./components/BottomBar";
 class App extends Component {
   state = {
     stations: [
-      {id: "putin_fm", name: "Putin FM", frequency: "66,6"}
+      {id: "putin_fm", name: "Putin FM", frequency: "66,6", icon: "https://cdn12.picryl.com/photo/2016/12/31/icon-microphone-voice-computer-communication-95e960-1024.png"}
     ],
     currentlyPlayingStation: "putin_fm"
   }
@@ -20,7 +20,7 @@ class App extends Component {
     return (
       <div className="App">
         <Toolbar/>
-        <Stations/>
+        <Stations stations={this.state.stations}/>
         <BottomBar currentlyPlayingStation={getPlayingStationName()}/>
       </div>
     );
