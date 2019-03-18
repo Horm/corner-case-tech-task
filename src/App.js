@@ -14,11 +14,15 @@ class App extends Component {
   }
 
   render() {
+
+    // TODO - Test and error checking
+    const getPlayingStationName = () => this.state.stations[this.state.stations.map(station => station.id).indexOf(this.state.currentlyPlayingStation)].name;
+
     return (
       <div className="App">
         <Toolbar/>
         <Stations/>
-        <BottomBar/>
+        <BottomBar currentlyPlayingStation={getPlayingStationName()}/>
       </div>
     );
   }
