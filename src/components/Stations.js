@@ -3,23 +3,24 @@ import PropTypes from 'prop-types';
 import Station from "./Station";
 
 
-
 const Stations = ({stations, selectedStation, handleStationClick, handlePlusClick, handleMinusClick}) => {
 
   const isStationSelected = (stationId) => stationId === selectedStation;
 
-  return <div>
-    {stations.map((station, index) =>
-        <Station
-            key={index}
-            station={station}
-            handleStationClick={handleStationClick}
-            handleMinusClick={handleMinusClick}
-            handlePlusClick={handlePlusClick}
-            isSelected={isStationSelected(station.id)}
-        />
-    )}
-  </div>;
+  return (
+      <div>
+        {stations.map((station, index) =>
+            <Station
+                key={index}
+                station={station}
+                handleStationClick={handleStationClick}
+                handleMinusClick={handleMinusClick}
+                handlePlusClick={handlePlusClick}
+                isSelected={isStationSelected(station.id)}
+            />
+        )}
+      </div>
+  );
 };
 
 Stations.propTypes = {

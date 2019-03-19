@@ -11,9 +11,8 @@ import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft"
 const styles = theme => ({
   toolbar: {
     alignItems: 'center',
-        justifyContent: 'space-between',
+    justifyContent: 'space-between',
   },
-
   uppercase: {
     textTransform: "uppercase",
   }
@@ -22,13 +21,13 @@ const styles = theme => ({
 const AppToolbar = ({handleBackClick, handleQuitClick, classes}) =>
     <AppBar position="fixed" color="primary" className={classes.appBar}>
       <Toolbar className={classes.toolbar}>
-        <IconButton color="white">
+        <IconButton color="default">
           <KeyboardArrowLeft/>
         </IconButton>
-        <Typography className={classes.uppercase} variant="h6" color="white">
+        <Typography className={classes.uppercase} variant="h6" color="textPrimary">
           Stations
         </Typography>
-        <IconButton color="white">
+        <IconButton color="default">
           <MoreIcon/>
         </IconButton>
       </Toolbar>
@@ -40,10 +39,8 @@ AppToolbar.propTypes = {
 };
 
 AppToolbar.defaultProps = {
-  handleBackClick: () => {
-  },
-  handleQuitClick: () => {
-  },
+  handleBackClick: () => {},
+  handleQuitClick: () => {},
 };
 
 export default withStyles(styles)(AppToolbar)
